@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useWeb3 } from '../context/Web3Context';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Navbar({ links = [] }) {
   const { selectedRole, isWalletConnected, account, logout, error, setError } = useWeb3();
+  const { theme, toggle, isNight } = useTheme();
   const location = useLocation();
 
   const short = (a) => a ? (a.slice(0, 6) + '...' + a.slice(-4)) : '';
@@ -34,6 +36,16 @@ export default function Navbar({ links = [] }) {
             {short(account)}
           </span>
         )}
+        <button
+          className="theme-toggle"
+          onClick={toggle}
+          title={isNight ? 'Switch to day mode' : 'Switch to night mode'}
+          aria-label={isNight ? 'Switch to day mode' : 'Switch to night mode'}
+        >
+          <span className={isNight ? '' : 'active'}>☀️</span>
+          <span className="theme-toggle-track"><span className="theme-toggle-knob" /></span>
+          <span className={isNight ? 'active' : ''}>🌙</span>
+        </button>
         {selectedRole && (
           <button className="nav-btn" onClick={() => { logout(); setError(''); }}>
             Logout

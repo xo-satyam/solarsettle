@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Web3Provider } from './context/Web3Context';
+import { ThemeProvider } from './context/ThemeContext';
 import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 import ProsumerDashboard from './pages/dashboards/ProsumerDashboard';
@@ -9,6 +10,7 @@ import GovtDashboard from './pages/dashboards/GovtDashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
 import './styles-extra.css';
+import './components/weather/weather.css';
 
 /**
  * SolarSettle app shell.
@@ -22,8 +24,9 @@ import './styles-extra.css';
  */
 function App() {
   return (
-    <Web3Provider>
-      <BrowserRouter>
+    <ThemeProvider>
+      <Web3Provider>
+        <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -53,8 +56,9 @@ function App() {
           />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-      </BrowserRouter>
-    </Web3Provider>
+        </BrowserRouter>
+      </Web3Provider>
+    </ThemeProvider>
   );
 }
 

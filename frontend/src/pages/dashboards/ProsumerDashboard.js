@@ -6,6 +6,9 @@ import Navbar from '../../components/Navbar';
 import TiltCard from '../../components/TiltCard';
 import useTx from '../../hooks/useTx';
 import { generateReading } from '../../lib/meterSimulator';
+import WeatherHero from '../../components/weather/WeatherHero';
+import HourlyForecast from '../../components/weather/HourlyForecast';
+import WeeklyForecast from '../../components/weather/WeeklyForecast';
 
 export default function ProsumerDashboard() {
   const { isWalletConnected, account, contract, connectWallet, connecting } = useWeb3();
@@ -56,6 +59,11 @@ export default function ProsumerDashboard() {
       <div className="dashboard">
         <h2>Prosumer Dashboard</h2>
         <p className="dashboard-sub">Role: Prosumer. {isWalletConnected ? ('Connected: ' + account.slice(0, 6) + '...' + account.slice(-4)) : 'Wallet not connected.'}</p>
+
+        {/* Weather module — isolated, must never break the dashboard */}
+        <WeatherHero />
+        <HourlyForecast />
+        <WeeklyForecast />
 
         {!isWalletConnected && (
           <div className="panel-form">
