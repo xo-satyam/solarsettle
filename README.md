@@ -193,8 +193,9 @@ Add a new network there and run `npm run deploy:<name>`.
 ## Frontend & UI/UX Credits
 
 - **Satyam Sharma** — Frontend Developer & UI/UX Designer.
+- **Yashaswi Raj** - Designed DISCOM & Goverment Dashboard.
 - Designed and developed the complete frontend of **Solar Settle**.
 - Created a clean, modern, responsive, and user-friendly interface.
 - Implemented reusable components and interactive UI elements.
 - Focused on intuitive navigation, visual hierarchy, and accessibility.
-- **GitHub:** https://github.com/xo-satyam/solarsettle
+- **GitHub:** https://github.com/xo-satyam
