@@ -187,3 +187,14 @@ Add a new network there and run `npm run deploy:<name>`.
 - Partial fills and time-bound listings
 - The Graph subquery for historical analytics
 - Gas-optimized events for cheaper logging
+
+## Credits
+
+## Frontend & UI/UX Credits
+
+- **Satyam Sharma** — Frontend Developer & UI/UX Designer.
+- Designed and developed the complete frontend of **Solar Settle**.
+- Created a clean, modern, responsive, and user-friendly interface.
+- Implemented reusable components and interactive UI elements.
+- Focused on intuitive navigation, visual hierarchy, and accessibility.
+- **GitHub:** https://github.com/xo-satyam/solarsettle
